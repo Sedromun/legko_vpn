@@ -2,7 +2,7 @@ from aiogram import F, Router
 from aiogram.filters import Command, StateFilter
 from aiogram.types import Message, FSInputFile
 
-from config import WELCOME_PHOTO, PROFILE_PHOTO, INFO_PHOTO, BUY_PHOTO, WELCOME_PRESENT
+from config import WELCOME_PRESENT
 from database.controllers.user import get_user, register_user, update_user
 from keyboards.buy import get_buy_vpn_keyboard
 from keyboards.info import get_info_keyboard

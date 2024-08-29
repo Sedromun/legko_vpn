@@ -22,7 +22,7 @@ def get_order_short_text(order_id: int, country: str):
 
 
 def get_buy_option_text(option):
-    return "🔥 " + option + " | " + str(get_option_price(option)) + "₽"
+    return "⏳ " + option + " | " + str(get_option_price(option)) + "₽"
 
 
 def get_country_text(value: str, flag: str):

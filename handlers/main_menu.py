@@ -1,6 +1,6 @@
 from aiogram import F, Router
 from aiogram.filters import Command, StateFilter
-from aiogram.types import Message, FSInputFile
+from aiogram.types import Message
 
 from config import WELCOME_PRESENT
 from database.controllers.user import get_user, register_user, update_user

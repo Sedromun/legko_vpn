@@ -1,7 +1,6 @@
 import os
 
 from aiogram import Bot, Dispatcher
-from aiogram.types import FSInputFile
 from dotenv import load_dotenv
 from pydantic import SecretStr
 from cryptography.fernet import Fernet
@@ -89,14 +88,9 @@ bot = Bot(BOT_TOKEN.get_secret_value(), parse_mode="HTML", disable_web_page_prev
 
 dp = Dispatcher()
 
-WELCOME_PHOTO = FSInputFile("photos/welcome.jpg")
-BUY_PHOTO = FSInputFile("photos/buy.jpg")
-INFO_PHOTO = FSInputFile("photos/info.jpg")
-PROFILE_PHOTO = FSInputFile("photos/profile.jpg")
-
 PERCENT_REFERRAL = 10
 WELCOME_PRESENT = 50
-BOT_LINK = "https://t.me/OnTop_vpn_bot"
+BOT_LINK = "https://t.me/legkovpnbot"
 REFS_PARAM = "?start="
 
 INTERVAL = 5  # mins

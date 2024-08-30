@@ -20,7 +20,7 @@ services:
     container_name: bot
     restart: always
     depends_on:
-      - database
+      - database_vpn
       - backend
       - checker
     volumes:
@@ -35,7 +35,7 @@ services:
     container_name: backend
     restart: always
     depends_on:
-      - database
+      - database_vpn
       - proxy
     volumes:
       - ./:/app
@@ -50,17 +50,17 @@ services:
     container_name: checker
     restart: always
     depends_on:
-      - database
+      - database_vpn
     volumes:
       - ./:/app
     env_file:
       - ./.env
 
-  database:
+  database_vpn:
     build:
       context: ./database
       dockerfile: Dockerfile
-    container_name: database
+    container_name: database_vpn
     restart: always
     volumes:
       - db_volume:/var/lib/postgresql/data

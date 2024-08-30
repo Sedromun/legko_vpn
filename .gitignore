@@ -167,3 +167,4 @@ alembic/versions/*
 
 .idea
 
+*/__pycache__/

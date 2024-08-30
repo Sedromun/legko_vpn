@@ -13,11 +13,11 @@ services:
       - "443:443"
       - "3000:3000"
 
-  bot:
+  bot_vpn:
     build:
       context: ./
       dockerfile: Dockerfile.bot
-    container_name: bot
+    container_name: bot_vpn
     restart: always
     depends_on:
       - database_vpn

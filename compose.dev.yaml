@@ -13,14 +13,14 @@ services:
       - "443:443"
       - "3000:3000"
 
-  bot_vpn:
+  bot:
     build:
       context: ./
       dockerfile: Dockerfile.bot
-    container_name: bot_vpn
+    container_name: bot
     restart: always
     depends_on:
-      - database_vpn
+      - database
       - backend
       - checker
     volumes:
@@ -35,7 +35,7 @@ services:
     container_name: backend
     restart: always
     depends_on:
-      - database_vpn
+      - database
       - proxy
     volumes:
       - ./:/app
@@ -50,17 +50,17 @@ services:
     container_name: checker
     restart: always
     depends_on:
-      - database_vpn
+      - database
     volumes:
       - ./:/app
     env_file:
       - ./.env
 
-  database_vpn:
+  database:
     build:
       context: ./database
       dockerfile: Dockerfile
-    container_name: database_vpn
+    container_name: database
     restart: always
     volumes:
       - db_volume:/var/lib/postgresql/data
